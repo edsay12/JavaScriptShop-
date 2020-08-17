@@ -1,0 +1,141 @@
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.header {
+    background-color: #4c3282;
+    overflow: hidden;
+    padding: 20px 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header p{
+  float: left;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px; 
+  line-height: 25px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: all .8s;
+}
+
+.header-right p{
+    float: right;
+}
+
+.header-right p::before{
+    font-size: 17px;
+}
+
+
+.header-right p:hover{
+    color: #15ffff;
+}
+
+.header h2 {
+    color: #fff;
+    transition: all .45s;
+    cursor: pointer;
+}
+
+.header h2:hover {
+    color: #101010;
+}
+
+#produtos {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+    margin-top: 75px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+#carrinho {
+    max-width: 900px;
+    margin: 0;
+    padding: 0 2%;
+    display: block;
+    height: 100%;
+}
+
+.produto {
+    width: 32%;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    cursor: default;
+    border-radius: 5px;
+}
+
+.produto a{
+    text-decoration: none;
+    transition: all .3s;
+    cursor: default;
+    color: #fff;
+    background-color: #5fb382;
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.produto a:hover {
+    color: #505050;
+}
+
+.produto h1{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.produto p{
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.produto img {
+    max-width: 350px;
+    max-height: 350px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 768px){
+    .produto {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .produto img {
+        max-width: 350px;
+        max-height: 350px;
+    }
+    
+}
