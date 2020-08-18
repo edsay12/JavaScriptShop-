@@ -14,4 +14,6 @@ Você pode adicionar um sistema de checkout depois!
 
 ![Preview](/imagens/preview3.png)  
 
-[previews do site](imagens/)
+[previews do site](imagens/)  
+[GitHub Pages](https://pages.github.com/).
+
