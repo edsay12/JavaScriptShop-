@@ -7,7 +7,7 @@
 }
 
 .header {
-    background-color: #4c3282;
+    background-color: #3268a8;
     overflow: hidden;
     padding: 20px 10px;
     text-align: center;
@@ -32,15 +32,15 @@
 
 .header-right p{
     float: right;
+	padding-right: 15px;
+}
+
+.header-right p i{
+	margin-left: 15px
 }
 
 .header-right p::before{
     font-size: 17px;
-}
-
-
-.header-right p:hover{
-    color: #15ffff;
 }
 
 .header h2 {
@@ -58,26 +58,161 @@
     margin: 0 auto;
     padding: 0 2%;
     display: flex;
-    margin-top: 75px;
+    margin-top: 85px;
     flex-wrap: wrap;
     margin-bottom: 15px;
 }
 
 #carrinho {
-    max-width: 900px;
-    margin: 0;
-    padding: 0 2%;
-    display: block;
-    height: 100%;
+  width: 750px;
+  min-height: 423px;
+  margin: 80px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+  border-color: #1111;
+  border: #1111 solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  height: 60px;
+  border-bottom: 1px solid #E1E8EE;
+  padding: 20px 30px;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+}
+ 
+.item {
+  padding: 20px 30px;
+  height: 120px;
+  display: flex;
+}
+ 
+.item:nth-child(3) {
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+}
+
+.buttons {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 60px;
+}
+.delete-btn,
+.like-btn {
+  display: inline-block;
+  Cursor: pointer;
+}
+.delete-btn {
+  width: 18px;
+  height: 17px;
+  background: url(&amp;quot;delete-icn.svg&amp;quot;) no-repeat center;
+}
+ 
+.like-btn {
+  position: absolute;
+  top: 9px;
+  left: 15px;
+  background: url('twitter-heart.png');
+  width: 60px;
+  height: 60px;
+  background-size: 2900%;
+  background-repeat: no-repeat;
+}
+
+.item .image {
+  margin-right: 50px;
+}
+
+.item .image img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.item i{
+  cursor: pointer;
+}
+
+.description {
+  padding-top: 10px;
+  margin-right: 60px;
+  width: 115px;
+}
+ 
+.description span {
+  display: block;
+  font-size: 14px;
+  color: #43484D;
+  font-weight: 400;
+}
+ 
+.description span:first-child {
+  margin-bottom: 5px;
+}
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 8px;
+  color: #86939E;
+}
+
+.quantity {
+  padding-top: 20px;
+  margin-right: 60px;
+}
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+ 
+button[class*=btn] {
+  width: 30px;
+  height: 30px;
+  background-color: #E1E8EE;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.minus-btn {
+  margin-bottom: 3px;
+}
+.plus-btn {
+  margin-top: 2px;
+}
+ 
+button:focus,
+input:focus {
+  outline:0;
+}
+
+.total-price {
+  width: 83px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
 }
 
 .produto {
+    border-radius: 4px;
+    box-shadow: 0 0 3px #000000;
     width: 32%;
     margin-left: 20px;
     margin-top: 20px;
-    border: 1px solid #ccc;
     cursor: default;
-    border-radius: 5px;
+    transition: all .2s;
+}
+
+.produto:hover{
+    box-shadow: 0 0 8px #000000;
 }
 
 .produto a{
@@ -92,10 +227,12 @@
     width: 100%;
     text-align: center;
     cursor: pointer;
+    box-shadow: 0px 0px 7px -7px black;
 }
 
 .produto a:hover {
     color: #505050;
+    box-shadow: 0px 0px 7px -1px black;
 }
 
 .produto h1{
@@ -138,4 +275,31 @@
         max-height: 350px;
     }
     
+	  #produtos {
+		    margin-top: 120px;
+    }
+    
+    #carrinho {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+    .item {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .item .image img {
+      width: 50%;
+    }
+    .item .image,
+    .item .quantity,
+    .item .description {
+      width: 100%;
+      text-align: center;
+      margin: 6px 0;
+    }
+    .buttons {
+      margin-right: 20px;
+    }
 }

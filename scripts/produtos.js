@@ -80,6 +80,25 @@ const items = [
         estoque: 2,
         preco: 1250,
         quantidade: 0,
+    },
+	{
+        id: 4,
+        nome: 'Gabinete Gamer',
+        desc: 'Gabinete Gamer - Coolermaster',
+        especs: [
+            '',
+        ],
+        categorias: [
+            'eletronicos',
+            'computadores',
+            'gamer',
+            'gabinete',
+            'componentes'
+        ],
+        img: 'imagens/produtos/gabinete.png',
+        estoque: 5,
+        preco: 350,
+        quantidade: 0,
     }
 ];
 
@@ -116,10 +135,49 @@ loja = () => {
 
 loja();
 
+add = () => {
+    
+    var pluss = document.getElementsByClassName('plus-btn');
+    for(var i = 0; i < pluss.length; i++){
+        let key = pluss[i].getAttribute('key');
+        pluss[i].addEventListener("click", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            let produto = items[key];
+    
+            if(produto.quantidade + 1 <= produto.estoque)
+                produto.quantidade ++;
+            
+            atualizarCarrinho();
+        });
+    }
+}
+
+remove = () => {
+    
+    var remove = document.getElementsByClassName('minus-btn');
+    for(var i = 0; i < remove.length; i++){
+        let key = remove[i].getAttribute('key');
+        remove[i].addEventListener("click", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            let produto = items[key];
+    
+            produto.quantidade --;
+            
+            atualizarCarrinho();
+        });
+    }
+}
+
 atualizarCarrinho = () => {
     var containerCarrinho = document.getElementById('carrinho');
 
-    containerCarrinho.innerHTML = "";
+    containerCarrinho.innerHTML = `
+        <div class="title">Carrinho de compras</div>
+    `;
 
     var total = 0;
 
@@ -128,18 +186,40 @@ atualizarCarrinho = () => {
 
             total += item.preco * item.quantidade;
             containerCarrinho.innerHTML += `
-                <p><strong>${item.nome}</strong> R$: ${item.preco} (x ${item.quantidade})</p>
-                <hr>
+                <div class="item">
+                <div class="image">
+                    <img max-width="150px" max-height="150px" src="${item.img}" alt="${item.id}" />
+                </div>
+            
+                <div class="description">
+                    <span>${item.desc}</span>
+                </div>
+            
+                <div class="quantity">
+                    <button class="minus-btn" onClick="remove();" type="button" key="${item.id}" name="button">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <input type="text" name="name" value="${item.quantidade}">
+                    <button class="plus-btn" onClick="add();" key="${item.id}" type="button" name="button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            
+                <div class="total-price">R$ ${item.preco * item.quantidade}</div>
+                </div>
             `;
         }
     });
 
     if(total > 0){
         containerCarrinho.innerHTML += `
-                <p><strong>Total: R$ ${total}</strong></p>
-                <hr>
+        <div class="title">Valor total: R$ ${total}</div>
         `;
-
+    }
+    if(total <= 0){
+        containerCarrinho.innerHTML += `
+        <p class="item">Seu carrinho está vazio!</p>
+        `;
     }
 };
 
