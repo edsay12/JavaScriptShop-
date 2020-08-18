@@ -20,10 +20,10 @@ Você pode adicionar um sistema de checkout depois!
  | -------------------- | ------------------- |
  | sistema de carrinho  | setar cookies para salvar o carrinho |
  | listar produtos automaticamente | chamagem de produtos via api |
- | layout responsivel |
+ | layout responsivel | sistema de busca |
  | valor total do carrinho | sistema de checkout | 
  | adicionar ou remover itens do carrinho | sistema de frete |
-  
+ | | sistema de busca por categorias | 
 #### **Scripts e arquivos**  
   
 * [previews do site](imagens/)  
