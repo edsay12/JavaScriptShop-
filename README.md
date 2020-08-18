@@ -1,7 +1,4 @@
-# Simple e-commerce in js
+# Lojinha e-commerce.
   
-**This simple shop was made with js and html!**  
-Yes you can edit and publish it! have fun and enjoy!  
-  
-to improve it, you can use apis to get items from an sql!  
-the current product list comes from a static list!   
+**Essa loja é feita em js e html**  
+Ela possui um sistema simples de pegar os produtos apartir de uma `lista []` (você pode/deve usar uma api no local desta list)
