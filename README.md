@@ -9,7 +9,9 @@ Ela possui um sistema simples de pegar os produtos apartir de uma `lista []` (vo
 
 ![Preview](/imagens/preview.png)  
 
-> #### Este é o sistema de carrinho  
+#### Este é o sistema de carrinho:  
 Você pode adicionar um sistema de checkout depois!  
 
 ![Preview](/imagens/preview3.png)  
+
+[previews do site](imagens/)
