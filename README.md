@@ -8,3 +8,8 @@ Ela possui um sistema simples de pegar os produtos apartir de uma `lista []` (vo
 **A estilização contem um sistema resonsivel!**
 
 ![Preview](/imagens/preview.png)  
+
+> #### Este é o sistema de carrinho  
+Você pode adicionar um sistema de checkout depois!  
+
+![Preview](/imagens/preview3.png)  
