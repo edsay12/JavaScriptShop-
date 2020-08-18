@@ -6,4 +6,8 @@ Ela possui um sistema simples de pegar os produtos apartir de uma `lista []` (vo
   
 > #### Este é o preview da loja (todos os produtos são puxados da lista de produtos!  
   
-![Preview](/imagens/preview.png)
+![Preview](/imagens/preview.png)  
+
+> #### A estilização contem um sistema resonsivel  
+  
+![Preview](/imagens/preview2.png)  
