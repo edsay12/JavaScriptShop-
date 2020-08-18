@@ -16,5 +16,5 @@ Você pode adicionar um sistema de checkout depois!
 
 > ### Scripts e arquivos  
   
-[previews do site](imagens/)  
-[scripts do site](scripts/)  
+* [previews do site](imagens/)  
+* [scripts do site](scripts/)  
