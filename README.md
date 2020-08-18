@@ -14,5 +14,5 @@ Você pode adicionar um sistema de checkout depois!
 
 ![Preview](/imagens/preview3.png)  
 
-[previews do site](imagens/)
-[scripts do site](scripts/)
+[previews do site](imagens/)  
+[scripts do site](scripts/)  
