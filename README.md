@@ -5,6 +5,6 @@
 Ela possui um sistema simples de pegar os produtos apartir de uma `lista []` (você pode/deve usar uma api no local desta list)  
   
 > #### Este é o preview da loja (todos os produtos são puxados da lista de produtos!)  
-**A estilização contem um sistema resonsivel!  
+**  A estilização contem um sistema resonsivel!  
 
 ![Preview](/imagens/preview.png)  
