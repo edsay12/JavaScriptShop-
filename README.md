@@ -16,14 +16,21 @@ Você pode adicionar um sistema de checkout depois!
   
 #### **Sistemas na loja:**  
   
- | sistemas adicionados | possiveis adicionar |
- | -------------------- | ------------------- |
- | sistema de carrinho  | setar cookies para salvar o carrinho |
- | listar produtos automaticamente | chamagem de produtos via api |
- | layout responsivel | sistema de busca |
- | valor total do carrinho | sistema de checkout | 
- | adicionar ou remover itens do carrinho | sistema de frete |
- | | sistema de busca por categorias | 
+ - [x] Sistema de carrinho  
+ - [x] Listar produtos automaticamente  
+ - [x] Layout responsivel  
+ - [x] Valor total do carrinho
+ - [x] Alterar itens do carrinho  
+ - [x] Sistema de busca  
+  
+ | falta adicionar |
+ | ------------------- |
+ | setar cookies para salvar o carrinho |
+ | chamagem de produtos via api |
+ | sistema de checkout | 
+ | sistema de frete |
+ | sistema de busca por categorias | 
+
 #### **Scripts e arquivos**  
   
 * [previews do site](imagens/)  
