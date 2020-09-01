@@ -22,14 +22,11 @@ Você pode adicionar um sistema de checkout depois!
  - [x] Valor total do carrinho
  - [x] Alterar itens do carrinho  
  - [x] Sistema de busca  
-  
- | falta adicionar |
- | ------------------- |
- | setar cookies para salvar o carrinho |
- | chamagem de produtos via api |
- | sistema de checkout | 
- | sistema de frete |
- | sistema de busca por categorias | 
+ - [ ] Setar cookies carrinho
+ - [ ] Chamagem de produtos via api  
+ - [ ] Sistema de checkout 
+ - [ ] Sistema de frete  
+ - [ ] Sistema de busca por categorias 
 
 #### **Scripts e arquivos**  
   
