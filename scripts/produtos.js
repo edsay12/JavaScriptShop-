@@ -102,25 +102,31 @@ const items = [
     }
 ];
 
+allLinks = () => {
+    var links = document.getElementsByTagName('a');
+
+    for(var i = 0; i < links.length; i++){
+
+        links[i].addEventListener("click", function(e){
+            e.preventDefault();
+
+            let key = this.getAttribute('key');
+
+            let produto = items[key];
+
+            if(produto.quantidade + 1 <= produto.estoque)
+                produto.quantidade ++;
+            
+            atualizarCarrinho();
+            return false;
+        });
+    }
+}
+
 loja = () => {
     var containerProdutos = document.getElementById('produtos');
-    
-    /* 
-        items.map((item) => {
-            containerProdutos.innerHTML += `
-                <div class="produto">
-                    <h1>${item.nome}</h1>
-                    <img src="${item.img}" />
-                    <p>${item.desc}</p>
-                    <p>R$ ${item.preco}</p>
-                    <p>Em estoque: ${item.estoque}</p>
-                    <p><strong> ${item.especs.join('<br>')} </strong></p>
-                    <center><a key="${item.id}" href="#">Adicionar ao carrinho</a></center>
-                </div>
-            `;
-        });
-    */
-   
+    containerProdutos.innerHTML = ``;
+
     items.map((item) => {
         containerProdutos.innerHTML += `
             <div class="produto">
@@ -131,45 +137,81 @@ loja = () => {
             </div>
         `;
     });
+
+    allLinks();
 };
+
+lojaFiltro = () => {
+    var containerProdutos = document.getElementById('produtos');
+    var buscaIpt = document.getElementById('busca');
+
+    var busa = buscaIpt.value;
+
+    containerProdutos.innerHTML = ``;
+    
+    items.map((item) => {
+        var desc = item.desc.toLocaleLowerCase();
+        var nome = item.nome.toLocaleLowerCase();
+
+        if(desc.includes(busa.toLocaleLowerCase()) || nome.includes(busa.toLocaleLowerCase())){
+            containerProdutos.innerHTML += `
+                <div class="produto">
+                    <h1>${item.nome}</h1>
+                    <img src="${item.img}" />
+                    <p>${item.desc} R$ ${item.preco}</p>
+                    <center><a key="${item.id}" href="#">Adicionar ao carrinho</a></center>
+                </div>
+            `;
+
+            console.log(busca.value + ' > ' + desc + ' > ' + nome)
+        }
+    });
+
+    allLinks();
+}
 
 loja();
 
-add = () => {
-    
-    var pluss = document.getElementsByClassName('plus-btn');
-    for(var i = 0; i < pluss.length; i++){
-        let key = pluss[i].getAttribute('key');
-        pluss[i].addEventListener("click", function(e){
-            e.preventDefault();
-            e.stopPropagation();
+var buscaBtn = document.getElementById('buscaBtn');
+var buscaIpt = document.getElementById('busca');
+buscaIpt.hidden = true;
 
-            let produto = items[key];
-    
-            if(produto.quantidade + 1 <= produto.estoque)
-                produto.quantidade ++;
-            
-            atualizarCarrinho();
-        });
+buscaBtn.addEventListener('click', function(event){
+    if(buscaIpt.hidden){
+        buscaIpt.hidden = false;
+        lojaFiltro();
+    }else{
+        buscaIpt.hidden = true;
+        loja();
     }
+});
+
+buscaIpt.addEventListener('keyup', function(event){
+    if(!buscaIpt.hidden)
+        lojaFiltro();
+});
+
+function add(event){
+
+    let key = event.path[0].getAttribute('key')
+    
+    let produto = items[key];
+    
+    if(produto.quantidade + 1 <= produto.estoque)
+        produto.quantidade ++;
+    
+    atualizarCarrinho();
 }
 
-remove = () => {
+function remove(event) {
     
-    var remove = document.getElementsByClassName('minus-btn');
-    for(var i = 0; i < remove.length; i++){
-        let key = remove[i].getAttribute('key');
-        remove[i].addEventListener("click", function(e){
-            e.preventDefault();
-            e.stopPropagation();
-
-            let produto = items[key];
+    let key = event.path[0].getAttribute('key')
     
-            produto.quantidade --;
-            
-            atualizarCarrinho();
-        });
-    }
+    let produto = items[key];
+    
+    produto.quantidade --;
+    
+    atualizarCarrinho();
 }
 
 atualizarCarrinho = () => {
@@ -182,6 +224,7 @@ atualizarCarrinho = () => {
     var total = 0;
 
     items.map((item) => {
+
         if(item.quantidade > 0){
 
             total += item.preco * item.quantidade;
@@ -196,12 +239,12 @@ atualizarCarrinho = () => {
                 </div>
             
                 <div class="quantity">
-                    <button class="minus-btn" onClick="remove();" type="button" key="${item.id}" name="button">
-                        <i class="fas fa-minus"></i>
+                    <button class="minus-btn" onClick="remove(event);" type="button" key="${item.id}" name="button">
+                        <i class="fas fa-minus" key="${item.id}"></i>
                     </button>
                     <input type="text" name="name" value="${item.quantidade}">
-                    <button class="plus-btn" onClick="add();" key="${item.id}" type="button" name="button">
-                        <i class="fas fa-plus"></i>
+                    <button class="plus-btn" onClick="add(event);" key="${item.id}" type="button" name="button">
+                        <i class="fas fa-plus" key="${item.id}"></i>
                     </button>
                 </div>
             
@@ -222,22 +265,3 @@ atualizarCarrinho = () => {
         `;
     }
 };
-
-var links = document.getElementsByTagName('a');
-
-for(var i = 0; i < links.length; i++){
-
-    links[i].addEventListener("click", function(e){
-        e.preventDefault();
-
-        let key = this.getAttribute('key');
-
-        let produto = items[key];
-
-        if(produto.quantidade + 1 <= produto.estoque)
-            produto.quantidade ++;
-        
-        atualizarCarrinho();
-        return false;
-    });
-}
